@@ -1,6 +1,7 @@
 package main.java.com.projeto.projetoHandeball.model.entity;
 
 public class Match {
+    int id;
     private String date;
     private Team homeTeam;
     private int homeGoals;
@@ -14,6 +15,20 @@ public class Match {
         this.homeTeam = homeTeam;
         this.visitorTeam = visitorTeam;
         this.stadium = stadium;
+    }
+    public Match(int id, String date, Team homeTeam, Team visitorTeam, Stadium stadium) {
+        this.id = id;
+        this.date = date;
+        this.homeTeam = homeTeam;
+        this.visitorTeam = visitorTeam;
+        this.stadium = stadium;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDate() {
