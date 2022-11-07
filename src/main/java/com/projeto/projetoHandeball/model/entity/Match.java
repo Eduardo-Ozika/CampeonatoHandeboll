@@ -1,8 +1,11 @@
 package main.java.com.projeto.projetoHandeball.model.entity;
 
-public class Match {
+import java.util.Date;
+
+public class Match implements Comparable<Match>{
     int id;
     private String date;
+    private Date data;
     private Team homeTeam;
     private int homeGoals;
     private Team visitorTeam;
@@ -37,6 +40,14 @@ public class Match {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 
     public Team getHomeTeam() {
@@ -102,5 +113,12 @@ public class Match {
         this.homeTeam.addGoals(homeGoals);
         this.visitorTeam.addGoals(visitorGoals);
         this.over=true;
+    }
+
+    @Override
+    public int compareTo(Match o) {
+        if (getData() == null || o.getData() == null)
+            return 0;
+        return getData().compareTo(o.getData());
     }
 }
